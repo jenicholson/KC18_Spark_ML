@@ -1,0 +1,99 @@
+---
+title: "Spark ML vs H2O.ai for Machine Learning in Spark"
+author: "Janae Nicholson, Ph.D."
+date: "October 10, 2018"
+output: 
+  revealjs::revealjs_presentation:
+    transition: "slide"
+    theme: "simple"
+    highlight: "haddock"
+    background_transition: "none"
+    fig_height: 5
+    fig_width: 9.5
+    keep_md: no
+    css: reveal2.css
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+
+Who is this woman? 
+
+Why should I listen to her?
+
+## Overview
+
+- What I will talk about.
+- What I will not talk about.
+- Why do we need two frameworks for ML in Spark?
+
+# Spark ML
+
+## Overview of the Spark ML
+
+- History
+- Languages: Java, Scala, Python, & R.
+- Algorithms: See handout.
+
+## Pros of the Spark ML
+
+- Fair allocation of resources with YARN.
+- Good documentation for Scala, Java, & Python.
+
+## Cons of the Spark ML
+
+- Documentation and examples for R are limited (see spark.Rstudio.com for better documentation.)
+- Must convert data to parquet format before running models.
+- Errors are very cryptic.
+
+## Spark MLlib Documentation
+
+Documentation can be found here: <https://spark.apache.org/mllib/>
+
+## Details
+
+# H2O.ai Sparkling Water
+
+## Overview of H2O.ai Sparkling Water
+
+- History (do you remember 0xdata?)
+- Interfaces: Scala, R, Python, & H2O Flow UI.
+- Algorthims: See handout.
+
+## Pros of H2O.ai Sparkling Water
+
+- Code and UI similar for base H2O.ai product
+- Runs faster due to non-dynamic memory allocation for YARN que in Spark
+- Output is more Statistican Friendly.
+- Performing a Parameter Search is more user friendly.
+
+## Cons of H2O.ai Sparkling Water
+
+- Interfacing with Spark causes bugs
+- Must convert you data to the H2O format for use.
+
+## Details
+
+![Taken from https://www.h2o.ai/products/h2o-sparkling-water/](Sparkling_Water1.png)
+
+# Suggestions 
+
+## Spark ML might be for you if...
+
+- You ONLY work with ALL the data.
+- You like Machine Learning Pipelines.
+- You like debugging cryptic error codes.
+
+## H2O.ai Sparkling Water might be for you if...
+
+- You code in R or like a point and click interface (Flow UI).
+- You are a Statistician.
+- You want to use XGBoost in Spark.
+- You like scaling up problems.
+- YOu like debugging error codes that make sense to a human.
+
+# Conclusions
