@@ -13,6 +13,7 @@ output:
     keep_md: no
     css: reveal2.css
     self_contained: false
+    fig_caption: true
 ---
 
 ```{r setup, include=FALSE}
@@ -42,17 +43,20 @@ Why should I listen to her?
 ## Pros of the Spark ML
 
 - Fair allocation of resources with YARN.
+- Broad Variety of Algorithms.
 - Good documentation for Scala, Java, & Python.
 
 ## Cons of the Spark ML
 
-- Documentation and examples for R are limited (see spark.Rstudio.com for better documentation.)
+- Documentation and examples for R are limited (see spark.Rstudio.com for documentation.)
 - Must convert data to parquet format before running models.
 - Errors are very cryptic.
 
 ## Spark MLlib Documentation
 
-Documentation can be found here: <https://spark.apache.org/mllib/>
+Documentation on models as well as Scala, Java, & Python code can be found here: <https://spark.apache.org/mllib/>
+
+Documentation for R code is here: http://spark.rstudio.com/
 
 ## Details
 
@@ -90,10 +94,11 @@ Documentation can be found here: <https://spark.apache.org/mllib/>
 
 ## H2O.ai Sparkling Water might be for you if...
 
-- You code in R or like a point and click interface (Flow UI).
+- You code in base R.
+- You like a point and click interface (Flow UI).
 - You are a Statistician.
 - You want to use XGBoost in Spark.
 - You like scaling up problems.
-- YOu like debugging error codes that make sense to a human.
+- You like debugging error codes that make sense to a human.
 
 # Conclusions

@@ -1,0 +1,70 @@
+---
+title: "Spark ML vs H2O.ai Algorithms"
+author: "Janae Nicholson, Ph.D."
+date: "October 10, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r cleandata, echo=FALSE, message=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+data <- read_csv(file = "C:/Users/janae/Documents/RProj/KC18_Spark_ML/Spark_ML_vs_H2O.csv")
+data <- data %>% 
+  mutate(Spark_ML = if_else(is.na(Spark_ML), "", Spark_ML),
+         H2O_ai = if_else(is.na(H2O_ai), "", H2O_ai)) %>% 
+  select(Algorithm, `Spark ML`=Spark_ML, H2O.ai=H2O_ai)
+
+classification <- data %>% 
+  slice(3:20) %>% 
+  slice(-9) %>% 
+  slice(-16)
+
+regression <- data %>% 
+  slice(23:36) %>% 
+  slice(-11)
+
+other <- data %>% 
+  slice(38:50) %>% 
+  slice(-9)
+```
+
+##Classification Algorithms
+```{r class, echo=FALSE}
+kable(classification) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>% 
+  group_rows("Binomial Classification", 1, 8, 
+             label_row_css = "background-color: #666; color: #fff;") %>% 
+  group_rows("Multinomial Classification", 9, 15, 
+             label_row_css = "background-color: #666; color: #fff;") %>% 
+  group_rows("Other", 16, 16, 
+             label_row_css = "background-color: #666; color: #fff;") %>% 
+  footnote(symbol = c("A single decision tree can be built using the random forest algorithm with one tree."))
+```
+
+<P style="page-break-before: always">
+##Regression Algorithms
+```{r regn, echo=FALSE}
+kable(regression) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  group_rows("Generalized Linear Models", 1, 5, 
+             label_row_css = "background-color: #666; color: #fff;") %>% 
+  group_rows("Survival Models", 11, 12, 
+             label_row_css = "background-color: #666; color: #fff;") %>% 
+  footnote(symbol = c("A single decision tree can be built using the random forest algorithm with one tree."))
+```
+
+<P style="page-break-before: always">
+##Other Algorithms
+```{r other, echo=FALSE}
+kable(other) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>% 
+  group_rows("Unsupervised", 1, 8, 
+             label_row_css = "background-color: #666; color: #fff;") %>% 
+  group_rows("Other", 9, 12, 
+             label_row_css = "background-color: #666; color: #fff;") 
+```

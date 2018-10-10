@@ -1,0 +1,51 @@
+Algorithm,Spark_ML,H2O_ai
+Classification,,
+Binomial Classification,,
+Logistic Regression,X,X
+Decision Tree,X,X*
+Random Forest,X,X
+Gradient-Boosted Trees,X,X
+Linear Support Vector Machine,X,
+Naïve Bayes,X,X
+XGBoost,,X
+Neural Network (MLP),X,X
+Multinomial Classification,,
+Logistic Regression,X,X
+Decision Tree,X,X*
+Random Forest,X,X
+Gradient Boosted Trees,,X
+Naïve Bayes,X,X
+XGBoost ,,X
+Neural Network (MLP),,X
+Other Classification,,
+One-vs-Rest Classifier,X,
+Regression,,
+Generalized Linear Regression*,X,X
+Gaussian Regression,X,X
+Poisson Regression,X,X
+Gamma Regression,X,X
+Ordinal Regression,,X
+Tweedie Regression,X,
+Decision Tree Regression,X,X*
+Random Forest Regression,X,X
+Gradient-Boosted Tree Regression,X,X
+XGBoost Regressions,,X
+Neural Network (MLP),,X
+Survival Regression,,
+Proportional Hazards,,X
+Accelerated Failure Time Model,X,
+Isotonic Regression,X,
+Unsupervised,,
+K-Means Clustering,X,X
+Gaussian Mixture Model (Clustering),X,
+Latent Dirichlet Allocation (LDA),X,
+Principal Component Analysis (PCA),X,X
+Singular Value Decomposition (SVD),X,
+Collaborative Filtering (Recommendations),X,
+Frequent Pattern Mining,X,
+Generalized Low Rank Models,,X
+Other,,
+"Elastic Net, Lasso, & Ridge",X,X
+Word2Vec,X,X
+Term Frequency Inverse Document Frequency (TFIDF),X,
+Partial Dependency Plots,,X
